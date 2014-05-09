@@ -55,6 +55,29 @@ let g:miniBufExplModSelTarget = 1
 " Opsplorer
 let s:split_width = 32
 
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
+    call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
+endif
+
+call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+
+call neobundle#end()
+
+filetype plugin indent on
+
+
+
+
 " for perl
 set iskeyword+=:
 filetype plugin on
