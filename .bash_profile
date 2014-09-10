@@ -2,7 +2,7 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 export CC=gcc-4.2
 
+export PATH=/usr/local/bin:$PATH
+eval "$(rbenv init -)"

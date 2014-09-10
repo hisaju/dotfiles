@@ -47,6 +47,7 @@ set list
 set listchars=tab:\ \ ,extends:<,trail:\ 
 set laststatus=2
 set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L
+set clipboard=unnamed,autoselect
 
 let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -76,8 +77,6 @@ call neobundle#end()
 filetype plugin indent on
 
 
-
-
 " for perl
 set iskeyword+=:
 filetype plugin on
@@ -104,10 +103,12 @@ filetype plugin on
 compiler ruby
 let ruby_space_errors=1
 au BufRead,BufNewFile *.erb set filetype=eruby
+au BufRead,BufNewFile *.yml set filetype=yaml
 au FileType ruby set ts=2 sw=2 softtabstop=2 expandtab
 au FileType javascript set ts=2 sw=2 softtabstop=2 expandtab
 au FileType html set ts=2 sw=2 softtabstop=2 expandtab
 au FileType eruby set ts=2 sw=2 softtabstop=2 expandtab
+au FileType yaml set ts=2 sw=2 softtabstop=2 expandtab
 autocmd FileType ruby map :W<CR> :w<CR>:!ruby -c %<CR>
 map ,rb <Esc>:%! rbeautify.rb - <CR>
 

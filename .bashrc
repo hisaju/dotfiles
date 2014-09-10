@@ -22,7 +22,7 @@ source $HOME/perl5/perlbrew/etc/bashrc
 
 PATH=$PATH:/usr/local/sbin
 #PATH="$(brew --prefix josegonzalez/php/php53)/bin:$PATH"
-#PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+eval "$(rbenv init -)"
 PATH=$PATH:/Applications/android-sdk-mac_86/tools
 PATH=$PATH:$HOME/bin
 #PATH=$PATH:/usr/local/share/npm/lib/node_modules
@@ -44,4 +44,4 @@ export PATH
 
 SSL_CERT_FILE=/usr/local/ssl/cacert.pem
 export SSL_CERT_FILE
-export DYLD_LIBRARY_PATH=/usr/local/Cellar/libxml2/2.9.1/lib:$DYLD_LIBRARY_PATH
+#export DYLD_LIBRARY_PATH=/usr/local/Cellar/libxml2/2.9.1/lib:$DYLD_LIBRARY_PATH
