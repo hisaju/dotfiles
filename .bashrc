@@ -25,6 +25,7 @@ PATH=$PATH:/usr/local/sbin
 eval "$(rbenv init -)"
 PATH=$PATH:/Applications/android-sdk-mac_86/tools
 PATH=$PATH:$HOME/bin
+PATH=$HOME/.nodebrew/current/bin:$PATH
 #PATH=$PATH:/usr/local/share/npm/lib/node_modules
 export PATH
 
