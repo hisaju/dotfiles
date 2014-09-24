@@ -18,7 +18,9 @@ fi
 
 export SCREENDIR=/Users/kikumoto/.screen/sessions
 
-source $HOME/perl5/perlbrew/etc/bashrc
+if [-f $HOME/perl5/perlbrew/etc/bashrc]; then
+  source $HOME/perl5/perlbrew/etc/bashrc
+fi
 
 PATH=$PATH:/usr/local/sbin
 #PATH="$(brew --prefix josegonzalez/php/php53)/bin:$PATH"
