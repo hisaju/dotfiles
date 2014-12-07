@@ -50,3 +50,6 @@ export PATH
 SSL_CERT_FILE=/usr/local/ssl/cacert.pem
 export SSL_CERT_FILE
 #export DYLD_LIBRARY_PATH=/usr/local/Cellar/libxml2/2.9.1/lib:$DYLD_LIBRARY_PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

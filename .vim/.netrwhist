@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/kikumoto/Proj/dm/centrl/config/deploy'
-let g:netrw_dirhist_2='/Users/kikumoto/Proj/pokeme/pokeme_rails/app/assets/stylesheets/oreno'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/kikumoto/Proj/pokeme/pokeme_rails/config/deploy'
+let g:netrw_dirhist_2='/Users/kikumoto/Proj/dm/centrl_r/config/environments'
+let g:netrw_dirhist_3='/Users/kikumoto/Proj/lunchteikiken/lunchteikiken/config/deploy'
+let g:netrw_dirhist_4='/Users/kikumoto/Proj/pokeme/pokeme_rails/config/environments'
+let g:netrw_dirhist_5='/Users/kikumoto/Proj/st/labo/app/assets/stylesheets/top'
+let g:netrw_dirhist_6='/Users/kikumoto/Proj/st/labo/app/assets/stylesheets/styles'
+let g:netrw_dirhist_7='/Users/kikumoto/Proj/st/labo/app/assets/stylesheets/top'
+let g:netrw_dirhist_8='/Users/kikumoto/Proj/dm/centrl_r/app/views/users/registrations'
+let g:netrw_dirhist_9='/Users/kikumoto/Proj/st/labo/config/settings'
