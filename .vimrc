@@ -59,9 +59,18 @@ let s:split_width = 32
 set nocompatible
 filetype plugin indent off
 
+if has('mac')
+  let g:vimproc_dll_path = '~/.vim/bundle/vimproc/autoload/vimproc_mac.so'
+endif
+
+if !1 | finish | endif
+
 if has('vim_starting')
-  set runtimepath+=~/dotfiles/.vim/bundle/neobundle.vim/
-    call neobundle#rc(expand('~/dotfiles/.vim/bundle/'))
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
 call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
@@ -71,26 +80,18 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
+NeoBundle 'slim-template/vim-slim'
 
 call neobundle#end()
 
 filetype plugin indent on
 
+NeoBundleCheck
 
-" for perl
 set iskeyword+=:
 filetype plugin on
 
-map ,ptv <Esc>:'<,'>! perltidy<CR>
-map ,pt <Esc>:%! perltidy<CR>
-
-map ,js <Esc>:%! fixjsstyle<CR>
-
-let g:user_zen_expandabbr_key = '<c-z>'
-
 set ambiwidth=double
-
-map ,ct <Esc>:%! csstidy - --silent=true<CR>
 
 " for ruby
 set nocompatible
@@ -110,7 +111,6 @@ au FileType html set ts=2 sw=2 softtabstop=2 expandtab
 au FileType eruby set ts=2 sw=2 softtabstop=2 expandtab
 au FileType yaml set ts=2 sw=2 softtabstop=2 expandtab
 autocmd FileType ruby map :W<CR> :w<CR>:!ruby -c %<CR>
-map ,rb <Esc>:%! rbeautify.rb - <CR>
 
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
