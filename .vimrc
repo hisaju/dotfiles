@@ -81,6 +81,7 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'slim-template/vim-slim'
+NeoBundle 'kchmck/vim-coffee-script'
 
 call neobundle#end()
 
@@ -90,8 +91,8 @@ NeoBundleCheck
 
 set iskeyword+=:
 filetype plugin on
+set backspace=2
 
-set ambiwidth=double
 
 " for ruby
 set nocompatible
@@ -119,3 +120,5 @@ augroup rbsyntaxcheck
   autocmd!
     autocmd BufWrite *.rb w !ruby -c
 augroup END
+
+set ambiwidth=double

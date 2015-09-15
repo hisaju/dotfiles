@@ -1,6 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/kikumoto/Proj/dm/centrl_r/config/deploy'
-let g:netrw_dirhist_2='/Users/kikumoto/Proj/st/labo/config/deploy'
-let g:netrw_dirhist_3='/Users/kikumoto/Proj/dm/centrl_r/app/models'
-let g:netrw_dirhist_4='/Users/kikumoto/Proj/dm/centrl_r/app'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/kikumoto/Proj/st/freeplus/los/app/assets/javascripts/app'
+let g:netrw_dirhist_2='/Users/kikumoto/Proj/st/freeplus/los/app/views/cfm_mailer'
+let g:netrw_dirhist_3='/Users/kikumoto/Proj/st/freeplus/los/app/views'
+let g:netrw_dirhist_4='/Users/kikumoto/Proj/st/freeplus/los/app'
+let g:netrw_dirhist_5='/Users/kikumoto/Proj/st/freeplus/los/app/views/cfm_mailer'
+let g:netrw_dirhist_6='/Users/kikumoto/Proj/st/alue/inforigin/app/controllers/users'
+let g:netrw_dirhist_7='/Users/kikumoto/Proj/st/alue/inforigin/app/controllers'
+let g:netrw_dirhist_8='/Users/kikumoto/Proj/st/carnny/carnny/app/cells/auth'
