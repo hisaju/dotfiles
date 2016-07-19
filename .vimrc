@@ -3,11 +3,10 @@
 " -------------------
 syntax on
 
-highlight LineNr ctermfg=darkyellow    " 行番号
+highlight LineNr ctermfg=darkyellow
 highlight NonText ctermfg=darkgrey
 highlight Folded ctermfg=blue
 highlight SpecialKey cterm=underline ctermfg=darkgrey
-"highlight SpecialKey ctermfg=grey " 特殊記号
 
 " 全角スペースを視覚化
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=white
@@ -130,7 +129,3 @@ augroup rbsyntaxcheck
 augroup END
 
 set ambiwidth=double
-
-"let g:syntastic_mode_map = { 'mode': 'passive',
-"            \ 'active_filetypes': ['ruby'] }
-"let g:syntastic_ruby_checkers = ['rubocop']
