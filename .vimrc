@@ -82,6 +82,11 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'slim-template/vim-slim'
 NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle "pangloss/vim-javascript"
+NeoBundle "mxw/vim-jsx"
+NeoBundle 'JulesWang/css.vim'
+NeoBundle 'cakebaker/scss-syntax.vim'
+"NeoBundle 'scrooloose/syntastic'
 
 call neobundle#end()
 
@@ -114,7 +119,10 @@ au FileType yaml set ts=2 sw=2 softtabstop=2 expandtab
 autocmd FileType ruby map :W<CR> :w<CR>:!ruby -c %<CR>
 
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
+au BufRead,BufNewFile *.sass set filetype=scss.css
+au BufRead,BufNewFile *.scss set filetype=scss.css
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
+autocmd FileType scss.css setlocal sw=2 sts=2 ts=2 et
 
 augroup rbsyntaxcheck
   autocmd!
@@ -122,3 +130,7 @@ augroup rbsyntaxcheck
 augroup END
 
 set ambiwidth=double
+
+"let g:syntastic_mode_map = { 'mode': 'passive',
+"            \ 'active_filetypes': ['ruby'] }
+"let g:syntastic_ruby_checkers = ['rubocop']

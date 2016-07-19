@@ -16,8 +16,6 @@ if [ -z "$SSH_AUTH_SOCK" ] || [ ! -S "$SSH_AUTH_SOCK" ]; then
     . $SSH_AGENT_FILE > /dev/null
 fi
 
-export SCREENDIR=/Users/kikumoto/.screen/sessions
-
 if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
   source $HOME/perl5/perlbrew/etc/bashrc
 fi
@@ -30,6 +28,7 @@ fi
 PATH=$PATH:/Applications/android-sdk-mac_86/tools
 PATH=$PATH:$HOME/bin
 PATH=$HOME/.nodebrew/current/bin:$PATH
+PATH=/usr/local/Cellar/vim/7.4.903/bin:$PATH
 #PATH=$PATH:/usr/local/share/npm/lib/node_modules
 export PATH
 
@@ -47,8 +46,8 @@ export PATH
 #export NODE_PATH=/usr/local/share/npm/lib/node_modules
 #export DYLD_LIBRARY_PATH=/usr/local/opt/libxml2/lib:$DYLD_LIBRARY_PATH
 
-SSL_CERT_FILE=/usr/local/ssl/cacert.pem
-export SSL_CERT_FILE
+#SSL_CERT_FILE=/usr/local/ssl/cacert.pem
+#export SSL_CERT_FILE
 #export DYLD_LIBRARY_PATH=/usr/local/Cellar/libxml2/2.9.1/lib:$DYLD_LIBRARY_PATH
 
 ### Added by the Heroku Toolbelt

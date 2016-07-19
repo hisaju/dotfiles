@@ -4,5 +4,5 @@ fi
 
 export CC=gcc-4.2
 
-export PATH=/usr/local/bin:$PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
