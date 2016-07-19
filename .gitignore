@@ -1,3 +1,4 @@
 .vim/bundle/*
 !.vim/bundle/neobundle.vim
 .s3cfg
+.gitconfig
