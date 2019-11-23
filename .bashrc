@@ -72,9 +72,6 @@ export GOPATH=$HOME/Proj/st/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export GO15VENDOREXPERIMENT=1
 
-export PATH=$PATH:/opt/td-agent/embedded/bin/
-export PATH="$(brew --prefix qt@5.5)/bin:$PATH"
-
 export FLUENT_HOST=127.0.0.1
 export FLUENT_PORT=24224
 export REDIS_ADDR=127.0.0.1
@@ -91,3 +88,5 @@ export CV_LOCAL_PORT=8080
 # export AWS_ACCESS_KEY_ID=AKIAJSO6EMWEJOK23K7A
 # export AWS_SECRET_ACCESS_KEY=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
 export DEPLOY_SSH_KEYS=
+
+export PATH=~/Library/Python/3.7/bin:$PATH

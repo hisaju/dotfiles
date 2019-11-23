@@ -1,14 +1,29 @@
-set encoding=utf-8
-set fileencoding=utf-8
-if &encoding !=# 'utf-8' 
-  set encoding=japan
-  set fileencoding=japan
+if has('mac')
+  let g:vimproc_dll_path = '~/.vim/bundle/vimproc/lib/vimproc_mac.so'
 endif
 
-if &encoding !=# 'utf-8' 
-  set encoding=japan
-  set fileencoding=japan
-endif
+call plug#begin('~/.vim/plugged')
+
+Plug 'Shougo/vimproc'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-haml'
+Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'JulesWang/css.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'fatih/vim-go'
+Plug 'Yggdroot/indentLine'
+Plug 'posva/vim-vue'
+Plug 'davidhalter/jedi-vim'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'Townk/vim-autoclose'
+Plug 'elzr/vim-json'
+
+call plug#end()
+
 " -------------------
 " 色の設定
 " -------------------
@@ -41,65 +56,17 @@ set listchars=tab:>\
 set laststatus=2
 set statusline=[%L]\ %t\ %y%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%r%m%=%c:%l/%L
 set clipboard=unnamed,autoselect
-
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
-
-" Opsplorer
-let s:split_width = 32
-
-set nocompatible
-filetype plugin indent off
-
-if has('mac')
-  let g:vimproc_dll_path = '~/.vim/bundle/vimproc/lib/vimproc_mac.so'
-endif
-
-if !1 | finish | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-call neobundle#begin(expand('~/dotfiles/.vim/bundle/'))
-
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'slim-template/vim-slim'
-NeoBundle 'tpope/vim-haml'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle "pangloss/vim-javascript"
-NeoBundle "mxw/vim-jsx"
-NeoBundle 'JulesWang/css.vim'
-NeoBundle 'cakebaker/scss-syntax.vim'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'Yggdroot/indentLine'
-" NeoBundle 'scrooloose/syntastic'
-
-call neobundle#end()
-
-filetype plugin indent on
-
-NeoBundleCheck
-
 set iskeyword+=:
 set backspace=2
+set ambiwidth=double
+set nocompatible
+autocmd TextYankPost * call system("tmux load-buffer -", v:event.regcontents)
 
 " for ruby
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
-
+filetype plugin indent on
 compiler ruby
+
 let ruby_space_errors=1
 au BufRead,BufNewFile *.erb set filetype=eruby
 au BufRead,BufNewFile *.yml set filetype=yaml
@@ -113,13 +80,13 @@ autocmd FileType ruby map :W<CR> :w<CR>:!ruby -c %<CR>
 au BufRead,BufNewFile,BufReadPre *.coffee   set filetype=coffee
 au BufRead,BufNewFile *.sass set filetype=scss.css
 au BufRead,BufNewFile *.scss set filetype=scss.css
+autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
 autocmd FileType coffee setlocal sw=2 sts=2 ts=2 et
 autocmd FileType scss.css setlocal sw=2 sts=2 ts=2 et
-
 
 augroup rbsyntaxcheck
   autocmd!
     autocmd BufWrite *.rb w !ruby -c
 augroup END
 
-set ambiwidth=double
+let g:vim_json_syntax_conceal = 0
