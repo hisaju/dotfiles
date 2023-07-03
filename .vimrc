@@ -7,6 +7,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Shougo/vimproc'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-rbenv'
+Plug 'tpope/vim-bundler'
 Plug 'slim-template/vim-slim'
 Plug 'tpope/vim-haml'
 Plug 'kchmck/vim-coffee-script'
@@ -21,6 +23,11 @@ Plug 'davidhalter/jedi-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'Townk/vim-autoclose'
 Plug 'elzr/vim-json'
+Plug 'github/copilot.vim'
+Plug 'mattn/vim-chatgpt'
+Plug 'vim-scripts/loremipsum'
+Plug 'osyo-manga/vim-nyaaancat'
+Plug 'mattn/vim-sl'
 
 call plug#end()
 
@@ -61,6 +68,7 @@ set backspace=2
 set ambiwidth=double
 set nocompatible
 autocmd TextYankPost * call system("tmux load-buffer -", v:event.regcontents)
+set updatetime=5
 
 " for ruby
 syntax on
@@ -90,3 +98,6 @@ augroup rbsyntaxcheck
 augroup END
 
 let g:vim_json_syntax_conceal = 0
+
+imap <silent> <C-j> <Plug>(copilot-next)
+imap <silent> <C-k> <Plug>(copilot-previous)
